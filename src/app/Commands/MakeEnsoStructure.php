@@ -113,7 +113,7 @@ class MakeEnsoStructure extends Command
 
     private function preProcess($config, $key, &$input)
     {
-        switch($key) {
+        switch ($key) {
             case 'name':
                 $segments = collect(explode('\\', $input));
                 $input = $segments->pop();
