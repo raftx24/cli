@@ -102,11 +102,22 @@ class MakeEnsoStructure extends Command
         collect($config->keys())
             ->each(function ($key) use ($config, $choice) {
                 $input = $this->input($config, $key);
+                $this->preProcess($config, $key, $input);
                 $config->set($key, $input);
             });
 
         if (!$this->configured->contains($choice)) {
             $this->configured->push($choice);
+        }
+    }
+
+    private function preProcess($config, $key, &$input)
+    {
+        switch($key) {
+            case 'name':
+                $segments = collect(explode('\\', $input));
+                $input = $segments->pop();
+                $config->set('nameSegments', $segments->implode('\\'));
         }
     }
 
