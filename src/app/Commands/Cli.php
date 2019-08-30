@@ -4,8 +4,8 @@ namespace LaravelEnso\Cli\app\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
-use LaravelEnso\Cli\app\Helpers\TestConfig;
 use LaravelEnso\Helpers\app\Classes\Obj;
+use LaravelEnso\Cli\app\Helpers\TestConfig;
 use LaravelEnso\Cli\app\Services\Structure;
 use LaravelEnso\Cli\app\Services\Validator;
 use LaravelEnso\Cli\app\Writers\RouteGenerator;
@@ -182,9 +182,9 @@ class Cli extends Command
 
     private function attemptWrite()
     {
-         $this->choices = TestConfig::loadStructure();
-         //$this->choices = TestConfig::loadPackageStructure();
-         $this->configured = $this->choices->keys();
+        $this->choices = TestConfig::loadStructure();
+        //$this->choices = TestConfig::loadPackageStructure();
+        $this->configured = $this->choices->keys();
 
         if ($this->validates && $this->failsValidation()) {
             $this->index();

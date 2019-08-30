@@ -143,7 +143,7 @@ class FormWriter
         $array = [
             '${Model}' => ucfirst($model->get('name')),
             '${model}' => lcfirst($model->get('name')),
-            '${title}' => Str::snake($model->get('name'),' '),
+            '${title}' => Str::snake($model->get('name'), ' '),
             '${permissionGroup}' => $this->choices->get('permissionGroup')->get('name'),
             '${namespace}' => $this->params->get('namespace')
                 .'Http\\Controllers\\'.$this->segments()->implode('\\'),

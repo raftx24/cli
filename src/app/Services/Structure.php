@@ -2,8 +2,8 @@
 
 namespace LaravelEnso\Cli\app\Services;
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\App;
 use LaravelEnso\Helpers\app\Classes\Obj;
 use LaravelEnso\Cli\app\Writers\FormWriter;
 use LaravelEnso\Cli\app\Writers\TableWriter;
@@ -54,7 +54,7 @@ class Structure
     private function writeStructure()
     {
         App::makeWith(StructureMigrationWriter::class,
-            ['choices' => $this->choices,'params' => $this->params]
+            ['choices' => $this->choices, 'params' => $this->params]
         )->run();
 
         return $this;
@@ -63,7 +63,7 @@ class Structure
     public function writePackage()
     {
         App::makeWith(PackageWriter::class,
-            ['choices' => $this->choices,'params' => $this->params]
+            ['choices' => $this->choices, 'params' => $this->params]
         )->run();
 
         return $this;
@@ -74,7 +74,7 @@ class Structure
         if ($this->choices->get('files')->has('model')
             || $this->choices->get('files')->has('table migration')) {
             App::makeWith(ModelAndMigrationWriter::class,
-                ['choices' => $this->choices,'params' => $this->params]
+                ['choices' => $this->choices, 'params' => $this->params]
             )->run();
         }
 
@@ -85,7 +85,7 @@ class Structure
     {
         if ($this->choices->get('files')->has('routes')) {
             App::makeWith(RoutesWriter::class,
-                ['choices' => $this->choices,'params' => $this->params]
+                ['choices' => $this->choices, 'params' => $this->params]
             )->run();
         }
 
@@ -96,7 +96,7 @@ class Structure
     {
         if ($this->choices->get('files')->has('views')) {
             App::makeWith(ViewsWriter::class,
-                ['choices' => $this->choices,'params' => $this->params]
+                ['choices' => $this->choices, 'params' => $this->params]
             )->run();
         }
 
@@ -107,11 +107,11 @@ class Structure
     {
         if ($this->choices->get('files')->has('form')) {
             App::makeWith(FormWriter::class,
-                ['choices' => $this->choices,'params' => $this->params]
+                ['choices' => $this->choices, 'params' => $this->params]
             )->run();
 
             App::makeWith(ValidatorWriter::class,
-                ['choices' => $this->choices,'params' => $this->params]
+                ['choices' => $this->choices, 'params' => $this->params]
             )->run();
         }
 
@@ -122,7 +122,7 @@ class Structure
     {
         if ($this->choices->get('files')->has('table')) {
             App::makeWith(TableWriter::class,
-                ['choices' => $this->choices,'params' => $this->params]
+                ['choices' => $this->choices, 'params' => $this->params]
             )->run();
         }
 
@@ -133,7 +133,7 @@ class Structure
     {
         if ($this->choices->get('files')->has('options')) {
             App::makeWith(OptionsWriter::class,
-                ['choices' => $this->choices,'params' => $this->params]
+                ['choices' => $this->choices, 'params' => $this->params]
             )->run();
         }
 
