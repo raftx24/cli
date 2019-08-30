@@ -57,7 +57,7 @@ class RouteGenerator
 
     private function fromTo()
     {
-        $model = Str::lower($this->choices->get('model')->get('name'));
+        $model = lcfirst($this->choices->get('model')->get('name'));
         $packagePrefix = $this->isPackage
             ? 'api/'
             : '';

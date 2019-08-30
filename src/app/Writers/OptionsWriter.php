@@ -52,7 +52,7 @@ class OptionsWriter
                 .'Http\\Controllers\\'
                 .$this->segments()->implode('\\'),
             '${modelNamespace}' => $model->get('namespace'),
-            '${Model}' => $model->get('name'),
+            '${Model}' => ucfirst($model->get('name')),
         ];
 
         return [

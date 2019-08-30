@@ -53,7 +53,7 @@ class ModelAndMigrationWriter
     {
         $array = [
             '${modelNamespace}' => $this->model->get('namespace'),
-            '${Model}' => $this->model->get('name'),
+            '${Model}' => ucfirst($this->model->get('name')),
         ];
 
         return [
