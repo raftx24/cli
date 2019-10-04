@@ -28,7 +28,11 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelEnso\\Cli\\": "src/",
+            "LaravelEnso\\Cli\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "LaravelEnso\\Cli\\tests\\": "tests/"
         }
     },
