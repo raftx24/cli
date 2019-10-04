@@ -10,11 +10,10 @@ class Store extends Controller
 {
     public function __invoke(${requestStore} $request, ${Model} $${model})
     {
-        tap($${model})->fill($request->validated())
-            ->save();
+        $${model}->fill($request->validated())->save();
 
         return [
-            'message' => __('The ${model} was successfully created'),
+            'message' => __('The ${title} was successfully created'),
             'redirect' => '${permissionGroup}.edit',
             'param' => ['${model}' => $${model}->id],
         ];
